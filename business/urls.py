@@ -11,3 +11,12 @@ urlpatterns = [
     path("change_password", views.Change_password.as_view(), name="change_password"),
     path("payment", views.Payments.as_view(), name="payment"),
 ]
+
+'''
+index: sends get request to display the index page. It gets a 200 status code response if user is not authenticated 
+and a 302 redirect to dashboard if the user is already authenticated. This can be tested using the test cases in the test folder
+
+All the http get request made on all other routes get a 302 redirect to login page if user is not authenticated, as all 
+their views are inheriting from Django LoginRequiredMixin class
+
+'''

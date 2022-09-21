@@ -57,6 +57,28 @@ After successfully setting up and installing the dependencies and setting up the
 python manage.py runserver
 ```
 
+### API Usage
+The project has been done with little improvised frotend to practicalize how the API calls can be made with the proper URL Routing. The Views for the Authentication and the urls are located in the auth apploication.
+
+Social login couldn't be used in the project simple because it will require the input of secret details which if kept in a virtual enviroment, wint be made available outside my local machine for others to use.
+
+
+For each http response to requests, the conventional correspomding status code is returned. such as:
+200 for success
+302 for redirect
+404 for not found
+500 for server error
+
+### Reserved Calls
+
+Only a superuser account is allowed to maake a post request creating product, and a get request to view all payments history and order history. As this mimick the activity of he Admin staff of the Client's company
+
+To create a super user account please use the following code on your terminal and input the needed information
+
+```bash
+python manage.py createsuperuser
+```
+A super user account is needed from start to provide Products to display for users as none has been hardcoded expect a default picture for the products
 ### Testing
 
 the project consists of two apps, authz for authentication and business for everyother thing outside authentication. To run the test on the two apps together, use the command below:
@@ -74,3 +96,5 @@ to run test on the authz app only, use:
 python manage.py test authz
 ```
 
+### Commenting
+Comments are provided within the projects to explain the thought process without over-loading
