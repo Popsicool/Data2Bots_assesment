@@ -56,7 +56,7 @@ After successfully setting up and installing the dependencies and setting up the
 ```bash
 python manage.py runserver
 ```
-
+This will start the development server which can be accessed at http://127.0.0.1:8000/ or http://localhost:8000/
 ### API Usage
 The project has been done with little improvised frotend to practicalize how the API calls can be made with the proper URL Routing. The Views for the Authentication and the urls are located in the auth apploication.
 
