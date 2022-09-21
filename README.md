@@ -1,6 +1,10 @@
-# Data2Bots_assesment
+# Assignment Documentation
+## About
+This readme file contains the documentation for the project submission of a simple web application assignment given as part of the recruitment process.
+The web aplication allows authentication and keep track of users(customer), allows users to send HTTP request to place order for available products, allow users edit provided informations like password, First name and Last name, and simulate a payment process to make payments for orders and generate unique reference Number for each payment. Also provides an Admin user(Super User) the ability to view all Payment Records and all Order Records.
 
-## Setting up the Backend
+## Note:
+This project focus on supplying APIs needed for the backend functionality of the project, with basic frotend pages designed and  used to visualized how the whole process work, little attention was placed on the frontend design and All contents are Arbitrary.
 
 ### Install Dependencies
 
@@ -31,14 +35,12 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-Run This command to install the required project dependencies e.g Django
+Run This command to install the required project dependencies e.g Django. All the dependecies used have been pip freezed into the requirements.txt file which is located at the base of the project
 
 ```bash
 pip install -r requirements.txt
 ```
 
-
-### Set up the Database
 
 for this text assesment, the default sqlite database that come preinstalled with django was used due to the light weight of the project. In bigger projects, more bigger database like MySQL or Postgress SQL will be used for relational database
 
@@ -54,7 +56,8 @@ After successfully setting up and installing the dependencies and setting up the
 ```bash
 python manage.py runserver
 ```
-### Run the Server
+
+### Testing
 
 the project consists of two apps, authz for authentication and business for everyother thing outside authentication. To run the test on the two apps together, use the command below:
 
