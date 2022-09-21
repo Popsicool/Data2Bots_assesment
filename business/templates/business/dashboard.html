@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<hi>Welcome {{user.username}}</hi>
+
+
+
+<h2>Your Profile</h2>
+
+
+<p>Email: {{user.email}} </p>
+<p>First Name: {{user.first_name}}</p>
+<p>Last Name: {{user.last_name}}</p>
+
+<h3>Available products:
+</h3>
+<div class="products">
+{% if products %}
+{% for product in products %}
+<div>
+    <div class="each" >
+        <img src="{%static 'default.png' %}" alt="product">
+        <h4>Name: {{product.name}}</h4>
+        <p>Description: {{product.description}}</p>
+        <p>Price(USD): {{product.price}}</p>
+        <p>Quantity available: {{product.quantity}}</p>
+        <p>Quantity Needed:</p>
+        <form action="{% url 'business:order' %}" method="POST">
+        {% csrf_token %}
+        <input type="number" name="quantity"><br>
+        <input type="hidden" value="{{product.id}}" name="id">
+        <button type="submit">Place Order</button>
+        </form>
+    </div>
+   
+</div>
+</div>
+{% endfor %}
+
+{% else %}
+No product available, A super user account is needed to make that,
+please proceed by creating a super user account on your terminal with python manage.py createsuperuser command
+{% endif %}
+
+{% endblock %}

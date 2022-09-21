@@ -1,0 +1,39 @@
+{% block navbar %}
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<ul>
+    <li>
+        <a href="{% url 'business:index' %}">Dashboard</a>
+    </li>
+    {% if user.is_superuser %}
+    <li>
+        <a href="{% url 'business:add_product' %}"> Add a Product</a>
+    </li>
+        <li>
+        <a href="{% url 'business:payment' %}">Payment History</a>
+    </li>
+    {% endif %}
+    <li>
+        <a href="{% url 'business:change_info' %}">Edit information</a>
+    </li>
+    <li>
+        <a href="{% url 'business:order' %}">Orders Hstory</a>
+    </li>
+
+    <li>
+        <a href="{% url 'business:change_password' %}">Change Password</a>
+    </li>
+    <li>
+        <a href="{% url 'authz:logout' %}">Logout</a>
+    </li>
+    
+</ul>
+{% endblock %}
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+{% block content %}
+
+{% endblock %}

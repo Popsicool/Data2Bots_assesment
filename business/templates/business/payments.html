@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>This page and its url is available only to admin user to check all orders and payments</h2>
+<h4>Payments</h4>
+{% if payments %}
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Reference Number</th>
+        <th>Username</th>
+        <th>Email </th>
+        <th>Amount</th>
+    </thead>
+{% for payment in payments %}
+<tbody>
+    <tr>
+        <td>{{payment.created_at}}</td>
+        <td>{{payment.reference_number}}</td>
+        <td>{{payment.user.username}}</td>
+        <td>{{payment.user.email}}</td>
+        <td>{{payment.amount}}</td>
+    </tr>
+</tbody>
+{% endfor %}
+</table>
+{% else %}
+No Payment has been made yet
+{% endif %}
+
+{% if orders %}
+
+{% else %}
+No Order yet
+{% endif %}
+
+{% endblock %}

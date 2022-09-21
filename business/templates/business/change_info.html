@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Change Profile information</h2>
+<form action="{% url 'business:change_info' %}" method="POST">
+    {% csrf_token %}
+<label for="first_name">First name:</label><br>
+<input type="text" required name="first_name" value="{{user.first_name}}"><br>
+<label for="last_name">Last_name:</label><br>
+<input type="text" name="last_name" value="{{user.last_name }}" required><br><br>
+
+<button type="submit">Update Details</button>
+</form>
+{% endblock %}

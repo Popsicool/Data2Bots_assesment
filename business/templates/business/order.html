@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h2>Order History</h2>
+
+{% if orders %}
+
+<table>
+<thead>
+    <th>Date</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Amount</th>
+    <th>Payment Status</th>
+
+</thead>
+
+<tbody>
+    {% for order in orders %}
+    <tr>
+        <td>
+        {{order.created_at}}
+        </td>
+        <td>
+            {{order.product.name}}
+        </td>
+        <td>
+            {{ order.quantity }}
+        </td>
+        <td>
+            {{order.amount}}
+        </td>
+        <td>{{order.id}}</td>
+        <td>
+            {% if order.payment_status %}
+            Paid
+            {% else %}
+            <form action="{% url 'business:payment' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ order.id }}" name="id">
+            <button>Make Payment</button>
+            </form>
+            {% endif %}
+            
+        </td>
+    </tr>
+                 
+    {% endfor %}
+</tbody>
+</table>
+
+
+{% else %}
+No order has been placed yet
+{% endif %}
+
+
+
+{% endblock %}
