@@ -2,7 +2,9 @@
 {% load static %}
 <head>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
 </head>
+<nav>
 <ul>
     <li>
         <a href="{% url 'business:index' %}">Dashboard</a>
@@ -12,7 +14,7 @@
         <a href="{% url 'business:add_product' %}"> Add a Product</a>
     </li>
         <li>
-        <a href="{% url 'business:payment' %}">Payment History</a>
+        <a href="{% url 'business:payment' %}">Admin Page</a>
     </li>
     {% endif %}
     <li>
@@ -29,7 +31,7 @@
         <a href="{% url 'authz:logout' %}">Logout</a>
     </li>
     
-</ul>
+</ul></nav>
 {% endblock %}
 {% for message in messages %}
 <p>{{ message }}</p>

@@ -29,6 +29,10 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     payment_status = models.BooleanField(default=False)
 
+    def __str__(self) -> str:
+        return f"{self.user.username}'s order"
+
+
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     reference_number = models.PositiveIntegerField()

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
+
 <h2>This page and its url is available only to admin user to check all orders and payments</h2>
-<h4>Payments</h4>
+<h4 class="heading">Payments</h4>
 {% if payments %}
 <table>
     <thead>
@@ -26,8 +28,42 @@
 {% else %}
 No Payment has been made yet
 {% endif %}
-
+<h4 class="heading">All Order History</h4>
 {% if orders %}
+
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Username</th>
+        <th>Email </th>
+        <th>Product </th>
+        <th>Quantiy </th>
+        <th>Amount</th>
+        <th>Payment status</th>
+    </thead>
+{% for order in orders %}
+<tbody>
+    <tr>
+        <td>{{order.created_at}}</td>
+        <td>{{order.user.username}}</td>
+        <td>{{order.user.email}}</td>
+        <td>{{order.product}}</td>
+        <td>{{order.quantity}}</td>
+        <td>{{order.amount}}</td>
+        
+        <td>
+            {% if order.payment_status %}
+            Paid
+            {% else %}
+            Not yet paid
+            {% endif %}
+        
+        </td>
+    </tr>
+</tbody>
+{% endfor %}
+</table>
+
 
 {% else %}
 No Order yet

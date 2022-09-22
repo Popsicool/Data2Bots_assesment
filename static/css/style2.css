@@ -1,6 +1,3 @@
-button {
-	background-color: rgb(42, 129, 86);
-}
 
 table {
 	width: 70%;
@@ -29,7 +26,7 @@ table tr {
 	margin: 10%;
 	padding: 1% 1% 3% 3%;
 	text-align: center;
-	opacity: 0.8;
+	opacity: 0.9;
 	font-size: 10px;
 }
 
