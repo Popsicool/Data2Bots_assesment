@@ -6,9 +6,12 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# secret key and debug value hidden in a .env file and imported using python decouple library
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', cast=bool)
+# secret key and debug value will be hidden in a .env file and imported using python decouple library for production
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', cast=bool)
+
+SECRET_KEY = 'django-insecure-60w2j2y449up&a$)n*t20h$*n*7hf0z1jbl7i-1w3v0dkdxo3_'
+DEBUG = True
 # I cast the debug to boolean type because it will be comming as a string from decople
 
 ALLOWED_HOSTS = []
