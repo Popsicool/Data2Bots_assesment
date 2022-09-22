@@ -42,12 +42,12 @@ pip install -r requirements.txt
 ```
 
 # Database
- 
+
 for this test assesment, the default sqlite database that come preinstalled with django was used due to the light weight of the project. In bigger projects, more bigger database like MySQL or Postgress SQL will be used for relational database
 
 make migrations with
 ```bash
-python manage.py make migrations
+python manage.py makemigrations
 ```
  and migrate with
 ```bash
