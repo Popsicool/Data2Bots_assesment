@@ -41,10 +41,10 @@ Run This command to install the required project dependencies e.g Django. All th
 pip install -r requirements.txt
 ```
 
-# Database
+### Database
 
 for this test assesment, the default sqlite database that come preinstalled with django was used due to the light weight of the project. In bigger projects, more bigger database like MySQL or Postgress SQL will be used for relational database
-# Database Schema:
+### Database Schema:
 The database schedule can be accessed via the link below or in the schema.png file in the root directory of the project
 ```bash
 https://dbdiagram.io/d/632c4cf07b3d2034ff8c6bb5
