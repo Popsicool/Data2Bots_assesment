@@ -41,13 +41,20 @@ Run This command to install the required project dependencies e.g Django. All th
 pip install -r requirements.txt
 ```
 
+# Database
+ 
+for this test assesment, the default sqlite database that come preinstalled with django was used due to the light weight of the project. In bigger projects, more bigger database like MySQL or Postgress SQL will be used for relational database
 
-for this text assesment, the default sqlite database that come preinstalled with django was used due to the light weight of the project. In bigger projects, more bigger database like MySQL or Postgress SQL will be used for relational database
-
+make migrations with
+```bash
+python manage.py make migrations
+```
+ and migrate with
 ```bash
 python manage.py migrate
-python makemigrations metadata
 ```
+
+
 
 ### Run the Server
 
